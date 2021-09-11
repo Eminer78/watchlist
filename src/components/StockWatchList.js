@@ -22,13 +22,13 @@ export default class App extends React.Component {
     event.preventDefault();
     let qwlistKey = this.state.value;
 
-    if (qwlistKey !== undefined) {
-    } else qwlistKey = "0";
+    if (typeof qwlistKey === "undefined") {
+      qwlistKey = "0";
+    }
 
-    let intName = parseInt(qwlistKey, 10) + 1;
     const API_URL = "https://yxn8t.sse.codesandbox.io/stocks";
 
-    fetch(`${API_URL}/${intName}`)
+    fetch(`${API_URL}/${qwlistKey}`)
       .then((x) => x.json())
       .then((stocks) => {
         this.setState({ stocks: stocks });
@@ -61,10 +61,16 @@ export default class App extends React.Component {
   }
 
   renderOptions() {
-    return Object.keys(this.state.wlists).map((key) => {
+    if (!Array.isArray(this.state.wlists)) {
+      return [];
+    }
+
+    return this.state.wlists.map((watchlist) => {
+      const id = watchlist.id;
+      const listname = watchlist.listname;
       return (
-        <option key={key} value={key}>
-          {this.state.wlists[key].listname}
+        <option key={id} value={id}>
+          {listname}
         </option>
       );
     });
