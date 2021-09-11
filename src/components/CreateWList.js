@@ -13,8 +13,15 @@ export default class CreateWList extends Component {
       stk5: "",
     };*/
     this.newListSubmit = this.newListSubmit.bind(this);
+    this.handleReset = this.handleReset.bind(this);
   }
 
+  handleReset = () => {
+    document.querySelectorAll("input");
+    this.setState({
+      itemvalues: [{}],
+    });
+  };
   newListSubmit(event) {
     const API_URL = "https://yxn8t.sse.codesandbox.io/watchlists/new";
     event.preventDefault();
@@ -48,6 +55,14 @@ export default class CreateWList extends Component {
     })
       .then((x) => x.json())
       .then((x) => {
+        document.querySelector("[name=id]").value = "";
+        document.querySelector("[name=id]").value = "";
+        document.querySelector("[name=nlistname]").value = "";
+        document.querySelector("[name=nstk1]").value = "";
+        document.querySelector("[name=nstk2]").value = "";
+        document.querySelector("[name=nstk3]").value = "";
+        document.querySelector("[name=nstk4]").value = "";
+        document.querySelector("[name=nstk5]").value = "";
         this.setState();
       });
   }

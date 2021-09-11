@@ -12,6 +12,7 @@ export default class App extends React.Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.launchServer = this.launchServer.bind(this);
   }
 
   handleChange(event) {
@@ -41,6 +42,20 @@ export default class App extends React.Component {
       .then((wlists) => {
         this.setState({ wlists: wlists });
       });
+  }
+
+  launchServer() {
+    const URL_SERVER =
+      "https://codesandbox.io/s/em3613-web-server-forked-yxn8t?file=/src/index.js";
+    window.open(URL_SERVER);
+    /*const URL_SERVER =
+      "https://codesandbox.io/s/em3613-web-server-forked-yxn8t?file=/src/index.js";
+    fetch(URL_SERVER)
+      .then((x) => x.json())
+      .then(() => {
+        this.setState();
+      });
+      */
   }
 
   renderStockPrices() {
@@ -78,6 +93,9 @@ export default class App extends React.Component {
     return (
       <div className="StockWatchList">
         <h1>Stock Watch List</h1>
+        <form onSubmit={this.launchServer}>
+          <button>Launch Server</button>
+        </form>
         <h2>WatchLists</h2>
         <form onSubmit={this.handleSubmit}>
           <label>
