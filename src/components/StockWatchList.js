@@ -21,9 +21,8 @@ export default class App extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     let qwlistKey = this.state.value;
-
     if (typeof qwlistKey === "undefined") {
-      qwlistKey = "0";
+      qwlistKey = "1";
     }
 
     const API_URL = "https://yxn8t.sse.codesandbox.io/stocks";

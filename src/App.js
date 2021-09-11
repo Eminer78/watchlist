@@ -1,6 +1,7 @@
 import React from "react";
 import CreateWList from "./components/CreateWList";
 import StockWatchList from "./components/StockWatchList";
+import ManageWatchLists from "./components/ManageWatchLists";
 import "./styles/styles.css";
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -48,12 +49,23 @@ const App = () => (
                 Create New Watch List
               </NavLink>
             </li>
+            <li className="nav-item">
+              <NavLink
+                className="nav-link"
+                exact
+                to="/ManageWatchLists"
+                activeClassName="active"
+              >
+                Manage Watch Lists
+              </NavLink>
+            </li>
           </ul>
         </div>
       </nav>
 
       <Route exact path="/" component={StockWatchList} />
       <Route path="/CreateWList" component={CreateWList} />
+      <Route path="/ManageWatchLists" component={ManageWatchLists} />
     </Router>
     <footer className="footer-custom">Copyright 2021 Eric Miner</footer>
   </>
