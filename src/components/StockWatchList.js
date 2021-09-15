@@ -48,21 +48,13 @@ export default class App extends React.Component {
     const URL_SERVER =
       "https://codesandbox.io/s/em3613-web-server-forked-yxn8t?file=/src/index.js";
     window.open(URL_SERVER);
-    /*const URL_SERVER =
-      "https://codesandbox.io/s/em3613-web-server-forked-yxn8t?file=/src/index.js";
-    fetch(URL_SERVER)
-      .then((x) => x.json())
-      .then(() => {
-        this.setState();
-      });
-      */
   }
 
   renderStockPrices() {
     return Object.entries(this.state.stocks).map((stockData) => {
       return (
         <tr key={JSON.stringify(stockData)}>
-          <td>{stockData[0]}</td>
+          <th scope="row">{stockData[0]}</th>
           <td>{stockData[1].c}</td>
           <td>{stockData[1].o}</td>
           <td>{stockData[1].pc} </td>
@@ -91,35 +83,59 @@ export default class App extends React.Component {
   }
   render() {
     return (
-      <div className="StockWatchList">
-        <h1>Stock Watch List</h1>
-        <form onSubmit={this.launchServer}>
-          <button>Launch Server</button>
-        </form>
-        <h2>WatchLists</h2>
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            Watch List Name
-            <select name="wlists" onChange={this.handleChange}>
-              {this.renderOptions()}
-            </select>
-          </label>
-          <input type="submit" value="Submit" />
-        </form>
-        <table>
-          <tbody>
-            <tr>
-              <th>Stock Ticker </th>
-              <th>Current Price </th>
-              <th>Open </th>
-              <th>Prev. Close </th>
-              <th>Change </th>
-              <th>High </th>
-              <th>Low </th>
-            </tr>
-            {this.renderStockPrices()}
-          </tbody>
-        </table>
+      <div className="container">
+        <div className="row justify-content-center border border-dark my-4">
+          <div className="col-md-auto">
+            <h1>Stock Watch List</h1>
+          </div>
+        </div>
+        <div class="mb-3">
+          <div className="row justify-content-center">
+            <form className="col-md-auto" onSubmit={this.launchServer}>
+              <button>Launch Server</button>
+            </form>
+          </div>
+        </div>
+        <div className="row justify-content-center border border-dark my-4">
+          <div className="col-md-auto">
+            <form onSubmit={this.handleSubmit}>
+              <div className="form-text">
+                Select the Watch List You Would Like to View
+              </div>
+              <div className="row justify-content-center">
+                <div className="col-md-auto">
+                  <select
+                    className="form-select-sm my-2"
+                    name="wlists"
+                    onChange={this.handleChange}
+                  >
+                    {this.renderOptions()}
+                  </select>
+                  <input type="submit" value="Load" />
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div className="row justify-content-center border border-dark my-4">
+          <div className="col-md-auto">
+            <h2>WatchLists</h2>
+          </div>
+          <table className="table">
+            <thead>
+              <tr>
+                <th scope="col">Stock Ticker </th>
+                <th scope="col">Current Price </th>
+                <th scope="col">Open </th>
+                <th scope="col">Prev. Close </th>
+                <th scope="col">Change </th>
+                <th scope="col">High </th>
+                <th scope="col">Low </th>
+              </tr>
+            </thead>
+            <tbody>{this.renderStockPrices()}</tbody>
+          </table>
+        </div>
       </div>
     );
   }
