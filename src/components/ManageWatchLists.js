@@ -13,6 +13,7 @@ export default class ManageWatchLists extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateListSubmit = this.updateListSubmit.bind(this);
+    this.watchlistDeletebyId = this.watchlistDeletebyId.bind(this);
   }
 
   handleChange(event) {
@@ -45,7 +46,9 @@ export default class ManageWatchLists extends React.Component {
       });
   }
 
-  //This function is used update the contents of the database record
+  /***********************************************************************************/
+  //This updateListSubmit function is used update the contents of the database record
+  /***********************************************************************************/
   updateListSubmit(event) {
     const API_URL = "https://yxn8t.sse.codesandbox.io/watchlists-update-list";
     event.preventDefault();
@@ -92,6 +95,45 @@ export default class ManageWatchLists extends React.Component {
         document.querySelector("[name=nstk5]").value = "";
         this.setState();
       });
+  }
+  // End of Function
+
+  /***********************************************************************************/
+  //This updateListSubmit function is used update the contents of the database record
+  /***********************************************************************************/
+  watchlistDeletebyId(event) {
+    event.preventDefault();
+    if (window.confirm("Press Ok to Confirm and Delete")) {
+      const API_URL = "https://yxn8t.sse.codesandbox.io/watchlists-delete-list";
+      event.preventDefault();
+      console.log("Ok to Delete");
+      const qwlistKey = document.querySelector("[name=id-del]").value;
+      const id = document.querySelector("[name=id-del]").value;
+
+      fetch(`${API_URL}/${qwlistKey}`, {
+        method: "POST", // *GET, POST, PUT, DELETE, etc.
+        mode: "cors", // no-cors, *cors, same-origin
+        cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+        credentials: "same-origin", // include, *same-origin, omit
+        headers: {
+          "Content-Type": "application/json",
+          // 'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        redirect: "follow", // manual, *follow, error
+        referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+        body: JSON.stringify({
+          id,
+        }), // body data type must match "Content-Type" header
+      })
+        .then((x) => x.json())
+        .then((x) => {
+          document.querySelector("[name=id-del]").value = "";
+          this.setState();
+        });
+    } else {
+      console.log("Delete Canceled");
+      document.querySelector("[name=id-del]").value = "";
+    }
   }
 
   //This function renders the contents of each watchlist from database in a table
@@ -171,6 +213,13 @@ export default class ManageWatchLists extends React.Component {
             <input type="text" name="nstk4" placeholder="new stock ticker 4" />
             <input type="text" name="nstk5" placeholder="new stock ticker 5" />
             <button type="submit">Submit</button>
+          </form>
+        </div>
+        <div>
+          <h3>Delete Watchlist by ID</h3>
+          <form onSubmit={this.watchlistDeletebyId}>
+            <input type="text" name="id-del" placeholder="id" />
+            <button type="submit">Delete</button>
           </form>
         </div>
       </div>
