@@ -89,7 +89,7 @@ export default class App extends React.Component {
             <h1>Stock Watch List</h1>
           </div>
         </div>
-        <div class="mb-3">
+        <div className="mb-3">
           <div className="row justify-content-center">
             <form className="col-md-auto" onSubmit={this.launchServer}>
               <button>Launch Server</button>
@@ -117,7 +117,7 @@ export default class App extends React.Component {
             </form>
           </div>
         </div>
-        <div className="row justify-content-center border border-dark my-4">
+        <div className="row justify-content-center border border-dark my-2 px-4">
           <div className="col-md-auto">
             <h2>WatchLists</h2>
           </div>

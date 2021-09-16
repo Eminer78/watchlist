@@ -105,7 +105,6 @@ export default class ManageWatchLists extends React.Component {
     event.preventDefault();
     if (window.confirm("Press Ok to Confirm and Delete")) {
       const API_URL = "https://yxn8t.sse.codesandbox.io/watchlists-delete-list";
-      event.preventDefault();
       console.log("Ok to Delete");
       const qwlistKey = document.querySelector("[name=id-del]").value;
       const id = document.querySelector("[name=id-del]").value;
@@ -140,7 +139,7 @@ export default class ManageWatchLists extends React.Component {
   renderwatchListData() {
     return Object.entries(this.state.wListData).map((wLData) => {
       return (
-        <tr>
+        <tr key={JSON.stringify(wLData)}>
           <td>{wLData[1].id}</td>
           <td>{wLData[1].listname}</td>
           <td>{wLData[1].stk1}</td>
@@ -170,52 +169,108 @@ export default class ManageWatchLists extends React.Component {
   }
   render() {
     return (
-      <div className="Manage Watch Lists">
-        <h1>Manage Watch Lists</h1>
-        <div>
-          <h3>Show WatchList Information</h3>
+      <div className="container">
+        <h1 className="row justify-content-center py-4">Manage Watch Lists</h1>
+        <div className="border border-primary my-2 py-4 px-4">
+          <h3 className="row justify-content-center ">
+            Show WatchList Information
+          </h3>
           <form onSubmit={this.handleSubmit}>
-            <label>
-              Watch List Name
-              <select name="wlists" onChange={this.handleChange}>
-                {this.renderOptions()}
-              </select>
-            </label>
-            <input type="submit" value="Submit" />
+            <label className="form-label py-2">Watch List Name</label>
+            <select name="wlists" onChange={this.handleChange}>
+              {this.renderOptions()}
+            </select>
+            <input className="form-submit" type="submit" value="Submit" />
           </form>
-          <table>
+          <table className="table">
             <tbody>
               <tr>
-                <th>ID </th>
-                <th>WatchList Name </th>
-                <th>Stock Ticker1 </th>
-                <th>Stock Ticker2</th>
-                <th>Stock Ticker3</th>
-                <th>Stock Ticker4</th>
-                <th>Stock Ticker5</th>
+                <th scope="col">ID </th>
+                <th scope="col">WatchList Name </th>
+                <th scope="col">Stock Ticker1 </th>
+                <th scope="col">Stock Ticker2</th>
+                <th scope="col">Stock Ticker3</th>
+                <th scope="col">Stock Ticker4</th>
+                <th scope="col">Stock Ticker5</th>
               </tr>
               {this.renderwatchListData()}
             </tbody>
           </table>
         </div>
-        <div>
+        <div className="border border-primary my-2 py-4 px-4">
           <form onSubmit={this.updateListSubmit}>
-            <h3>Update Watchlist Information</h3>
-            <input type="text" name="id" placeholder="id" />
+            <h3 className="row justify-content-center ">
+              Update Watchlist Information
+            </h3>
+            <label className="form-label py-2">
+              Input the ID of the WatchList You Want to Change
+            </label>
             <input
+              className="form-control"
+              type="text"
+              name="id"
+              placeholder="id"
+            />
+            <label className="form-label py-2">
+              Stock Watch List Name (12 characters max length )
+            </label>
+            <input
+              className="form-control"
               type="text"
               name="nlistname"
               placeholder="new watchlist name"
             />
-            <input type="text" name="nstk1" placeholder="new stock ticker 1" />
-            <input type="text" name="nstk2" placeholder="new stock ticker 2" />
-            <input type="text" name="nstk3" placeholder="new stock ticker 3" />
-            <input type="text" name="nstk4" placeholder="new stock ticker 4" />
-            <input type="text" name="nstk5" placeholder="new stock ticker 5" />
-            <button type="submit">Submit</button>
+            <label className="form-label py-2">
+              Enter New Stock Ticker Symbol
+            </label>
+            <input
+              className="form-control"
+              type="text"
+              name="nstk1"
+              placeholder="new stock ticker 1"
+            />
+            <label className="form-label py-2">
+              Enter New Stock Ticker Symbol
+            </label>
+            <input
+              className="form-control"
+              type="text"
+              name="nstk2"
+              placeholder="new stock ticker 2"
+            />
+            <label className="form-label py-2">
+              Enter New Stock Ticker Symbol
+            </label>
+            <input
+              className="form-control"
+              type="text"
+              name="nstk3"
+              placeholder="new stock ticker 3"
+            />
+            <label className="form-label py-2">
+              Enter New Stock Ticker Symbol
+            </label>
+            <input
+              className="form-control"
+              type="text"
+              name="nstk4"
+              placeholder="new stock ticker 4"
+            />
+            <label className="form-label py-2">
+              Enter New Stock Ticker Symbol
+            </label>
+            <input
+              className="form-control"
+              type="text"
+              name="nstk5"
+              placeholder="new stock ticker 5"
+            />
+            <button className="btn btn-info my-2" type="submit">
+              Submit
+            </button>
           </form>
         </div>
-        <div>
+        <div className="border border-primary my-2 py-4 px-4">
           <h3>Delete Watchlist by ID</h3>
           <form onSubmit={this.watchlistDeletebyId}>
             <input type="text" name="id-del" placeholder="id" />

@@ -4,14 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 export default class CreateWList extends Component {
   constructor(props) {
     super(props);
-    /*this.state = {
-      listname: "",
-      stk1: "",
-      stk2: "",
-      stk3: "",
-      stk4: "",
-      stk5: "",
-    };*/
+
     this.newListSubmit = this.newListSubmit.bind(this);
     this.handleReset = this.handleReset.bind(this);
   }
@@ -55,31 +48,92 @@ export default class CreateWList extends Component {
     })
       .then((x) => x.json())
       .then((x) => {
-        document.querySelector("[name=id]").value = "";
-        document.querySelector("[name=id]").value = "";
-        document.querySelector("[name=nlistname]").value = "";
-        document.querySelector("[name=nstk1]").value = "";
-        document.querySelector("[name=nstk2]").value = "";
-        document.querySelector("[name=nstk3]").value = "";
-        document.querySelector("[name=nstk4]").value = "";
-        document.querySelector("[name=nstk5]").value = "";
+        document.querySelector("[name=listname]").value = "";
+        document.querySelector("[name=stk1]").value = "";
+        document.querySelector("[name=stk2]").value = "";
+        document.querySelector("[name=stk3]").value = "";
+        document.querySelector("[name=stk4]").value = "";
+        document.querySelector("[name=stk5]").value = "";
         this.setState();
       });
   }
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.newListSubmit}>
-          {/*<form action="/watchlists/new" method="POST">*/}
-          <input type="text" name="listname" placeholder="listname" />
-          <input type="text" name="stk1" placeholder="stock ticker 1" />
-          <input type="text" name="stk2" placeholder="stock ticker 2" />
-          <input type="text" name="stk3" placeholder="stock ticker 3" />
-          <input type="text" name="stk4" placeholder="stock ticker 4" />
-          <input type="text" name="stk5" placeholder="stock ticker 5" />
-          <button type="submit">Submit</button>
-        </form>
+      <div className="container border border-primary my-4">
+        <h2 className="row justify-content-center py-4">
+          New WatchList Creation Form
+        </h2>
+        <div className="my-4 px-4 pb-4">
+          <form onSubmit={this.newListSubmit}>
+            <label className="form-label py-2">
+              Stock Watch List Name (12 characters max length )
+            </label>
+            <input
+              className="form-control"
+              type="text"
+              name="listname"
+              placeholder="listname"
+              maxLength="12"
+            />
+
+            <label className="form-label py-2">
+              Enter Your First Stock Ticker Symbol
+            </label>
+            <input
+              className="form-control"
+              type="text"
+              name="stk1"
+              placeholder="stock ticker 1"
+              maxLength="4"
+            />
+            <label className="form-label py-2">
+              Enter Your Second Stock Ticker Symbol
+            </label>
+            <input
+              className="form-control"
+              type="text"
+              name="stk2"
+              placeholder="stock ticker 2"
+              maxLength="4"
+            />
+            <label className="form-label py-2">
+              Enter Your Third Stock Ticker Symbol
+            </label>
+            <input
+              className="form-control "
+              type="text"
+              name="stk3"
+              placeholder="stock ticker 3"
+              maxLength="4"
+            />
+            <label className="form-label py-2">
+              Enter Your Fourth Stock Ticker Symbol
+            </label>
+            <input
+              className="form-control"
+              type="text"
+              name="stk4"
+              placeholder="stock ticker 4"
+              maxLength="4"
+            />
+            <label className="form-label py-2">
+              Enter Your Fifth Stock Ticker Symbol
+            </label>
+            <input
+              className="form-control"
+              type="text"
+              name="stk5"
+              placeholder="stock ticker 5"
+              maxLength="4"
+            />
+            <div className="d-grid gap-2 col-6 mx-auto">
+              <button className="btn btn-info my-2" type="submit">
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     );
   }
