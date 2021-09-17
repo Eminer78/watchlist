@@ -64,7 +64,10 @@ const App = () => (
       <Route path="/CreateWList" component={CreateWList} />
       <Route path="/ManageWatchLists" component={ManageWatchLists} />
     </Router>
-    <footer className="footer-custom">Copyright 2021 Eric Miner</footer>
+
+    <footer className="row justify-content-center py-4">
+      Copyright Eric Miner 2021
+    </footer>
   </>
 );
 export default App;

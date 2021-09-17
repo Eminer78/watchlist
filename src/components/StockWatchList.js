@@ -84,26 +84,26 @@ export default class App extends React.Component {
   render() {
     return (
       <div className="container">
-        <div className="row justify-content-center border border-dark my-4">
-          <div className="col-md-auto">
-            <h1>Stock Watch List</h1>
+        <div className="row justify-content-center my-4 mx-2">
+          <div className="col-auto">
+            <h1>Stock WatchList</h1>
           </div>
         </div>
         <div className="mb-3">
           <div className="row justify-content-center">
-            <form className="col-md-auto" onSubmit={this.launchServer}>
+            <form className="col-auto" onSubmit={this.launchServer}>
               <button>Launch Server</button>
             </form>
           </div>
         </div>
-        <div className="row justify-content-center border border-dark my-4">
-          <div className="col-md-auto">
+        <div className="row justify-content-center border border-dark my-4 mx-2">
+          <div className="col-auto">
             <form onSubmit={this.handleSubmit}>
               <div className="form-text">
                 Select the Watch List You Would Like to View
               </div>
               <div className="row justify-content-center">
-                <div className="col-md-auto">
+                <div className="col-auto">
                   <select
                     className="form-select-sm my-2"
                     name="wlists"
@@ -117,9 +117,9 @@ export default class App extends React.Component {
             </form>
           </div>
         </div>
-        <div className="row justify-content-center border border-dark my-2 px-4">
+        <div className="row justify-content-center border border-dark my-2 px-4 mx-2">
           <div className="col-md-auto">
-            <h2>WatchLists</h2>
+            <h2 className="row justify-content-center">Stock Information</h2>
           </div>
           <table className="table">
             <thead>

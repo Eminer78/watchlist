@@ -171,22 +171,26 @@ export default class ManageWatchLists extends React.Component {
     return (
       <div className="container">
         <h1 className="row justify-content-center py-4">WatchList Manager</h1>
-        <div className="border border-primary my-2 py-4 px-4">
-          <h3 className="row align-items-center">
+        <div className="border border-dark my-2 py-4 px-4">
+          <h3 className="row justify-content-center">
             Display WatchList Information
           </h3>
           <form onSubmit={this.handleSubmit}>
-            <div className="row g-3 align-items-center py-2">
+            <div className="row g-3 justify-content-center mt-2 py-2">
               <div className="col-auto">
-                <label className="form-label mx-2 py-2">WatchList Name</label>
+                <label className="form-label pt-2">WatchList Name</label>
               </div>
               <div className="col-auto">
-                <select name="wlists" onChange={this.handleChange}>
+                <select
+                  className="form-select"
+                  name="wlists"
+                  onChange={this.handleChange}
+                >
                   {this.renderOptions()}
                 </select>
               </div>
               <div className="col-auto">
-                <button className="btn btn-secondary my-2 mx-2" type="submit">
+                <button className="btn btn-info" type="submit">
                   Submit
                 </button>
               </div>
@@ -209,9 +213,9 @@ export default class ManageWatchLists extends React.Component {
         </div>
 
         {/* This is the beginning of the form to update the watchlist information*/}
-        <div className="border border-primary my-2 py-4 px-4">
+        <div className="border border-dark my-2 py-4 px-4">
           <form onSubmit={this.updateListSubmit}>
-            <h3 className="row justify-content-center ">
+            <h3 className="row justify-content-center">
               Update Watchlist Information
             </h3>
             <div className="row g-3 align-items-center py-2">
@@ -235,7 +239,7 @@ export default class ManageWatchLists extends React.Component {
             </div>
             <div className="row g-3 align-items-center">
               <div className="col-3">
-                <label className="form-label mx-2">WatchList Name</label>
+                <label className="form-label">WatchList Name</label>
               </div>
               <div className="col-6">
                 <input
@@ -248,7 +252,7 @@ export default class ManageWatchLists extends React.Component {
                 />
               </div>
               <div className="col-3">
-                <div className="form-text mx-2">12 Character Max</div>
+                <div className="form-text">12 Character Max</div>
               </div>
             </div>
 
@@ -327,13 +331,15 @@ export default class ManageWatchLists extends React.Component {
                 />
               </div>
             </div>
-            <button className="btn btn-info my-2" type="submit">
-              Submit
-            </button>
+            <div className="d-grid gap-2 col-6 mx-auto">
+              <button className="btn btn-primary my-2" type="submit">
+                Submit
+              </button>
+            </div>
           </form>
         </div>
         {/* This is the beginning of the form to delete watchlists */}
-        <div className="border border-primary my-2 py-4 px-4">
+        <div className="border border-dark my-2 py-4 px-4">
           <h3 className="row justify-content-center ">
             Delete Watchlist by ID
           </h3>
