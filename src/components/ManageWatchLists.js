@@ -170,17 +170,27 @@ export default class ManageWatchLists extends React.Component {
   render() {
     return (
       <div className="container">
-        <h1 className="row justify-content-center py-4">Manage Watch Lists</h1>
+        <h1 className="row justify-content-center py-4">WatchList Manager</h1>
         <div className="border border-primary my-2 py-4 px-4">
-          <h3 className="row justify-content-center ">
-            Show WatchList Information
+          <h3 className="row align-items-center">
+            Display WatchList Information
           </h3>
           <form onSubmit={this.handleSubmit}>
-            <label className="form-label py-2">Watch List Name</label>
-            <select name="wlists" onChange={this.handleChange}>
-              {this.renderOptions()}
-            </select>
-            <input className="form-submit" type="submit" value="Submit" />
+            <div className="row g-3 align-items-center py-2">
+              <div className="col-auto">
+                <label className="form-label mx-2 py-2">WatchList Name</label>
+              </div>
+              <div className="col-auto">
+                <select name="wlists" onChange={this.handleChange}>
+                  {this.renderOptions()}
+                </select>
+              </div>
+              <div className="col-auto">
+                <button className="btn btn-secondary my-2 mx-2" type="submit">
+                  Submit
+                </button>
+              </div>
+            </div>
           </form>
           <table className="table">
             <tbody>
@@ -197,84 +207,150 @@ export default class ManageWatchLists extends React.Component {
             </tbody>
           </table>
         </div>
+
+        {/* This is the beginning of the form to update the watchlist information*/}
         <div className="border border-primary my-2 py-4 px-4">
           <form onSubmit={this.updateListSubmit}>
             <h3 className="row justify-content-center ">
               Update Watchlist Information
             </h3>
-            <label className="form-label py-2">
-              Input the ID of the WatchList You Want to Change
-            </label>
-            <input
-              className="form-control"
-              type="text"
-              name="id"
-              placeholder="id"
-            />
-            <label className="form-label py-2">
-              Stock Watch List Name (12 characters max length )
-            </label>
-            <input
-              className="form-control"
-              type="text"
-              name="nlistname"
-              placeholder="new watchlist name"
-            />
-            <label className="form-label py-2">
-              Enter New Stock Ticker Symbol
-            </label>
-            <input
-              className="form-control"
-              type="text"
-              name="nstk1"
-              placeholder="new stock ticker 1"
-            />
-            <label className="form-label py-2">
-              Enter New Stock Ticker Symbol
-            </label>
-            <input
-              className="form-control"
-              type="text"
-              name="nstk2"
-              placeholder="new stock ticker 2"
-            />
-            <label className="form-label py-2">
-              Enter New Stock Ticker Symbol
-            </label>
-            <input
-              className="form-control"
-              type="text"
-              name="nstk3"
-              placeholder="new stock ticker 3"
-            />
-            <label className="form-label py-2">
-              Enter New Stock Ticker Symbol
-            </label>
-            <input
-              className="form-control"
-              type="text"
-              name="nstk4"
-              placeholder="new stock ticker 4"
-            />
-            <label className="form-label py-2">
-              Enter New Stock Ticker Symbol
-            </label>
-            <input
-              className="form-control"
-              type="text"
-              name="nstk5"
-              placeholder="new stock ticker 5"
-            />
+            <div className="row g-3 align-items-center py-2">
+              <div className="col-3">
+                <label className="form-label mx-2">ID</label>
+              </div>
+              <div className="col-6">
+                <input
+                  className="form-control"
+                  type="text"
+                  name="id"
+                  placeholder="id"
+                  required
+                />
+              </div>
+              <div className="col-3">
+                <div className="form-text mx-2">
+                  Enter the Id of the WatchList you would like to update
+                </div>
+              </div>
+            </div>
+            <div className="row g-3 align-items-center">
+              <div className="col-3">
+                <label className="form-label mx-2">WatchList Name</label>
+              </div>
+              <div className="col-6">
+                <input
+                  className="form-control"
+                  type="text"
+                  name="nlistname"
+                  placeholder="new watchlist name"
+                  required
+                  maxLength="12"
+                />
+              </div>
+              <div className="col-3">
+                <div className="form-text mx-2">12 Character Max</div>
+              </div>
+            </div>
+
+            <div className="row g-3 align-items-center">
+              <div className="col-3">
+                <label className="form-label py-2">Stock Ticker 1</label>
+              </div>
+              <div className="col-6">
+                <input
+                  className="form-control"
+                  type="text"
+                  name="nstk1"
+                  placeholder="new stock ticker 1"
+                  required
+                  maxLength="4"
+                />
+              </div>
+            </div>
+            <div className="row g-3 align-items-center">
+              <div className="col-3">
+                <label className="form-label py-2">Stock Ticker 2</label>
+              </div>
+              <div className="col-6">
+                <input
+                  className="form-control"
+                  type="text"
+                  name="nstk2"
+                  placeholder="new stock ticker 2"
+                  required
+                  maxLength="4"
+                />
+              </div>
+            </div>
+            <div className="row g-3 align-items-center">
+              <div className="col-3">
+                <label className="form-label py-2">Stock Ticker 3</label>
+              </div>
+              <div className="col-6">
+                <input
+                  className="form-control"
+                  type="text"
+                  name="nstk3"
+                  placeholder="new stock ticker 3"
+                  required
+                  maxLength="4"
+                />
+              </div>
+            </div>
+            <div className="row g-3 align-items-center">
+              <div className="col-3">
+                <label className="form-label py-2">Stock Ticker 4</label>
+              </div>
+              <div className="col-6">
+                <input
+                  className="form-control"
+                  type="text"
+                  name="nstk4"
+                  placeholder="new stock ticker 4"
+                  required
+                  maxLength="4"
+                />
+              </div>
+            </div>
+            <div className="row g-3 align-items-center">
+              <div className="col-3">
+                <label className="form-label py-2">Stock Ticker 5</label>
+              </div>
+              <div className="col-6">
+                <input
+                  className="form-control"
+                  type="text"
+                  name="nstk5"
+                  placeholder="new stock ticker 5"
+                  required
+                  maxLength="4"
+                />
+              </div>
+            </div>
             <button className="btn btn-info my-2" type="submit">
               Submit
             </button>
           </form>
         </div>
+        {/* This is the beginning of the form to delete watchlists */}
         <div className="border border-primary my-2 py-4 px-4">
-          <h3>Delete Watchlist by ID</h3>
+          <h3 className="row justify-content-center ">
+            Delete Watchlist by ID
+          </h3>
           <form onSubmit={this.watchlistDeletebyId}>
-            <input type="text" name="id-del" placeholder="id" />
-            <button type="submit">Delete</button>
+            <div className="row justify-content-center ">
+              <div className="col-auto py-1">
+                <label className="form-label">Enter Id</label>
+              </div>
+              <div className="col-auto py-1">
+                <input type="text" name="id-del" placeholder="id" required />
+              </div>
+              <div className="col-auto">
+                <button className="btn btn-danger" type="submit">
+                  Delete
+                </button>
+              </div>
+            </div>
           </form>
         </div>
       </div>
