@@ -10,7 +10,7 @@ const App = () => (
   <>
     <Router>
       <div className="border-border-primary">
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark customNavBar">
           <div className="container-fluid">
             <button
               className="navbar-toggler d-lg-none mx-3"

@@ -1,6 +1,6 @@
 import React from "react";
-//import "./styles/styles.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "../styles/styles.css";
 
 export default class App extends React.Component {
   constructor(props) {
@@ -92,11 +92,11 @@ export default class App extends React.Component {
         <div className="mb-3">
           <div className="row justify-content-center">
             <form className="col-auto" onSubmit={this.launchServer}>
-              <button>Launch Server</button>
+              <button className="btn btn-secondary">Launch Server</button>
             </form>
           </div>
         </div>
-        <div className="row justify-content-center border border-dark my-4 mx-2">
+        <div className="row justify-content-center border border-light my-4 mx-2 customBorder">
           <div className="col-auto">
             <form onSubmit={this.handleSubmit}>
               <div className="form-text">
@@ -105,36 +105,38 @@ export default class App extends React.Component {
               <div className="row justify-content-center">
                 <div className="col-auto">
                   <select
-                    className="form-select-sm my-2"
+                    className="form-select-sm my-2 mx-2"
                     name="wlists"
                     onChange={this.handleChange}
                   >
                     {this.renderOptions()}
                   </select>
-                  <input type="submit" value="Load" />
+                  <input class="mycustombtn" type="submit" value="Load" />
                 </div>
               </div>
             </form>
           </div>
         </div>
-        <div className="row justify-content-center border border-dark my-2 px-4 mx-2">
-          <div className="col-md-auto">
-            <h2 className="row justify-content-center">Stock Information</h2>
+        <div className="row justify-content-center border border-light my-2 px-4 mx-2 customBorder">
+          <div class="stock-info">
+            <div className="col-md-auto">
+              <h2 className="row justify-content-center">Stock Information</h2>
+            </div>
+            <table className="table">
+              <thead class="tableHead">
+                <tr>
+                  <th scope="col">Stock Ticker </th>
+                  <th scope="col">Current Price </th>
+                  <th scope="col">Open </th>
+                  <th scope="col">Prev. Close </th>
+                  <th scope="col">Change </th>
+                  <th scope="col">High </th>
+                  <th scope="col">Low </th>
+                </tr>
+              </thead>
+              <tbody>{this.renderStockPrices()}</tbody>
+            </table>
           </div>
-          <table className="table">
-            <thead>
-              <tr>
-                <th scope="col">Stock Ticker </th>
-                <th scope="col">Current Price </th>
-                <th scope="col">Open </th>
-                <th scope="col">Prev. Close </th>
-                <th scope="col">Change </th>
-                <th scope="col">High </th>
-                <th scope="col">Low </th>
-              </tr>
-            </thead>
-            <tbody>{this.renderStockPrices()}</tbody>
-          </table>
         </div>
       </div>
     );

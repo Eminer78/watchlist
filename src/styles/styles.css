@@ -3,10 +3,46 @@
   text-align: center;
 }
 
-table {
+.customNavBar {
+  background-color: teal !important;
+}
+.nav-item {
+  color: black !important;
+}
+html body {
+  background-color: black;
+  color: teal;
+}
+
+label {
+  font-weight: bold;
+}
+.form-text {
+  color: white;
+  font-size: medium;
+}
+
+.customLabel {
+  text-align: right !important;
+}
+.table {
   display: table;
   align-self: center;
   width: 100%;
   margin-top: 2%;
   margin-bottom: 2%;
+  background-color: black;
+  color: lightgray;
+}
+
+.mycustombtn {
+  background-color: teal;
+}
+
+.tableHead {
+  color: teal;
+}
+
+.customBorder {
+  border-radius: 25px;
 }

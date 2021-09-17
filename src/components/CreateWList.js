@@ -64,7 +64,7 @@ export default class CreateWList extends Component {
         <h1 className="row justify-content-center py-4">
           New WatchList Creation Form
         </h1>
-        <div className="border border-dark my-4 py-2">
+        <div className="border border-light my-4 py-2 customBorder">
           <div className="my-4 px-4 pb-2">
             <form onSubmit={this.newListSubmit}>
               <label className="form-label py-2">
@@ -129,7 +129,10 @@ export default class CreateWList extends Component {
                 maxLength="4"
               />
               <div className="d-grid gap-2 col-6 mx-auto pt-4">
-                <button className="btn btn-primary my-2" type="submit">
+                <button
+                  className="btn btn-secondary my-2 mycustombtn"
+                  type="submit"
+                >
                   Submit
                 </button>
               </div>
