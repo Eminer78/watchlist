@@ -7,6 +7,7 @@ export default class CreateWList extends Component {
 
     this.newListSubmit = this.newListSubmit.bind(this);
     this.handleReset = this.handleReset.bind(this);
+    this.noSpaces = this.noSpaces.bind(this);
   }
 
   handleReset = () => {
@@ -15,6 +16,7 @@ export default class CreateWList extends Component {
       itemvalues: [{}],
     });
   };
+
   newListSubmit(event) {
     const API_URL = "https://yxn8t.sse.codesandbox.io/watchlists/new";
     event.preventDefault();
@@ -58,6 +60,13 @@ export default class CreateWList extends Component {
       });
   }
 
+  noSpaces(event) {
+    var regex = /[\s]/gi;
+    var result = document
+      .querySelector("[name=listname]")
+      .value.replace(regex, "1");
+    document.querySelector("[name=listname]").value = result;
+  }
   render() {
     return (
       <div className="container">
@@ -76,62 +85,64 @@ export default class CreateWList extends Component {
                 name="listname"
                 placeholder="listname"
                 maxLength="12"
+                onChange={this.noSpaces}
               />
 
               <label className="form-label py-2">
-                Enter Your First Stock Ticker Symbol
+                Enter Your 1st Stock Ticker Symbol
               </label>
               <input
                 className="form-control"
                 type="text"
                 name="stk1"
                 placeholder="stock ticker 1"
-                maxLength="4"
+                maxLength="5"
               />
               <label className="form-label py-2">
-                Enter Your Second Stock Ticker Symbol
+                Enter Your 2nd Stock Ticker Symbol
               </label>
               <input
                 className="form-control"
                 type="text"
                 name="stk2"
                 placeholder="stock ticker 2"
-                maxLength="4"
+                maxLength="5"
               />
               <label className="form-label py-2">
-                Enter Your Third Stock Ticker Symbol
+                Enter Your 3rd Stock Ticker Symbol
               </label>
               <input
                 className="form-control "
                 type="text"
                 name="stk3"
                 placeholder="stock ticker 3"
-                maxLength="4"
+                maxLength="5"
               />
               <label className="form-label py-2">
-                Enter Your Fourth Stock Ticker Symbol
+                Enter Your 4th Stock Ticker Symbol
               </label>
               <input
                 className="form-control"
                 type="text"
                 name="stk4"
                 placeholder="stock ticker 4"
-                maxLength="4"
+                maxLength="5"
               />
               <label className="form-label py-2">
-                Enter Your Fifth Stock Ticker Symbol
+                Enter Your 5th Stock Ticker Symbol
               </label>
               <input
                 className="form-control"
                 type="text"
                 name="stk5"
                 placeholder="stock ticker 5"
-                maxLength="4"
+                maxLength="5"
               />
               <div className="d-grid gap-2 col-6 mx-auto pt-4">
                 <button
                   className="btn btn-secondary my-2 mycustombtn"
                   type="submit"
+                  minLength="1"
                 >
                   Submit
                 </button>

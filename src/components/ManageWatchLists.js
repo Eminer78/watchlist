@@ -14,6 +14,7 @@ export default class ManageWatchLists extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateListSubmit = this.updateListSubmit.bind(this);
     this.watchlistDeletebyId = this.watchlistDeletebyId.bind(this);
+    this.noSpaces = this.noSpaces.bind(this);
   }
 
   handleChange(event) {
@@ -128,6 +129,7 @@ export default class ManageWatchLists extends React.Component {
         .then((x) => {
           document.querySelector("[name=id-del]").value = "";
           this.setState();
+          window.location.reload(false);
         });
     } else {
       console.log("Delete Canceled");
@@ -150,6 +152,14 @@ export default class ManageWatchLists extends React.Component {
         </tr>
       );
     });
+  }
+
+  noSpaces(event) {
+    var regex = /[\s]/gi;
+    var result = document
+      .querySelector("[name=nlistname]")
+      .value.replace(regex, "1");
+    document.querySelector("[name=nlistname]").value = result;
   }
   //This function renders the watchlist names in the selection field
   renderOptions() {
@@ -263,6 +273,7 @@ export default class ManageWatchLists extends React.Component {
                   placeholder="new watchlist name"
                   required
                   maxLength="12"
+                  onChange={this.noSpaces}
                 />
               </div>
               <div className="col-3">
@@ -281,7 +292,7 @@ export default class ManageWatchLists extends React.Component {
                   name="nstk1"
                   placeholder="new stock ticker 1"
                   required
-                  maxLength="4"
+                  maxLength="5"
                 />
               </div>
             </div>
@@ -296,7 +307,7 @@ export default class ManageWatchLists extends React.Component {
                   name="nstk2"
                   placeholder="new stock ticker 2"
                   required
-                  maxLength="4"
+                  maxLength="5"
                 />
               </div>
             </div>
@@ -311,7 +322,7 @@ export default class ManageWatchLists extends React.Component {
                   name="nstk3"
                   placeholder="new stock ticker 3"
                   required
-                  maxLength="4"
+                  maxLength="5"
                 />
               </div>
             </div>
@@ -326,7 +337,7 @@ export default class ManageWatchLists extends React.Component {
                   name="nstk4"
                   placeholder="new stock ticker 4"
                   required
-                  maxLength="4"
+                  maxLength="5"
                 />
               </div>
             </div>
@@ -341,7 +352,7 @@ export default class ManageWatchLists extends React.Component {
                   name="nstk5"
                   placeholder="new stock ticker 5"
                   required
-                  maxLength="4"
+                  maxLength="5"
                 />
               </div>
             </div>
