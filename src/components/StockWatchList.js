@@ -84,7 +84,7 @@ export default class App extends React.Component {
   render() {
     return (
       <div className="container">
-        <div className="row justify-content-center my-4 mx-2">
+        <div className="row justify-content-center my-4 ">
           <div className="col-auto">
             <h1>Stock WatchList</h1>
           </div>
@@ -96,8 +96,8 @@ export default class App extends React.Component {
             </form>
             <div className="row justify-content-center my-2 mx-2">
               <div className="row justify-content-center mt-4">
-                The Launch Server Button Is a temporary solution unti the server
-                side code is deployed outside CodeSandbox
+                The Launch Server Button is a temporary solution until the
+                server side code is deployed somewhere other than CodeSandbox
               </div>
             </div>
           </div>

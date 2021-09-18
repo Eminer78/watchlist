@@ -12,6 +12,7 @@
 html body {
   background-color: black;
   color: teal;
+  min-width: 535px;
 }
 
 label {
