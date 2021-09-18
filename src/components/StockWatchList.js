@@ -1,6 +1,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../styles/styles.css";
+import "../public/styles/stlyes.css";
 
 export default class App extends React.Component {
   constructor(props) {

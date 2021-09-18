@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/styles.css";
+import "../public/styles/stlyes.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default class ManageWatchLists extends React.Component {

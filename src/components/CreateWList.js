@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../styles/styles.css";
+import "../public/styles/stlyes.css";
 
 export default class CreateWList extends Component {
   constructor(props) {
