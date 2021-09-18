@@ -1,6 +1,6 @@
 import React from "react";
-import "../public/styles/stlyes.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "../styles/styles.css";
 
 export default class ManageWatchLists extends React.Component {
   constructor(props) {
@@ -209,25 +209,25 @@ export default class ManageWatchLists extends React.Component {
           <table className="table">
             <tbody>
               <tr>
-                <th class="tableHead" scope="col">
+                <th className="tableHead" scope="col">
                   ID
                 </th>
-                <th class="tableHead" scope="col">
+                <th className="tableHead" scope="col">
                   WatchList Name
                 </th>
-                <th class="tableHead" scope="col">
+                <th className="tableHead" scope="col">
                   Stock Ticker1
                 </th>
-                <th class="tableHead" scope="col">
+                <th className="tableHead" scope="col">
                   Stock Ticker2
                 </th>
-                <th class="tableHead" scope="col">
+                <th className="tableHead" scope="col">
                   Stock Ticker3
                 </th>
-                <th class="tableHead" scope="col">
+                <th className="tableHead" scope="col">
                   Stock Ticker4
                 </th>
-                <th class="tableHead" scope="col">
+                <th className="tableHead" scope="col">
                   Stock Ticker5
                 </th>
               </tr>

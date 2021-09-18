@@ -1,6 +1,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../public/styles/stlyes.css";
+import "../styles/styles.css";
 
 export default class App extends React.Component {
   constructor(props) {
@@ -117,19 +117,19 @@ export default class App extends React.Component {
                   >
                     {this.renderOptions()}
                   </select>
-                  <input class="mycustombtn" type="submit" value="Load" />
+                  <input className="mycustombtn" type="submit" value="Load" />
                 </div>
               </div>
             </form>
           </div>
         </div>
         <div className="row justify-content-center border border-light my-2 mx-2 customBorder">
-          <div class="stock-info">
+          <div className="stock-info">
             <div className="col-md-auto">
               <h2 className="row justify-content-center">Stock Information</h2>
             </div>
             <table className="table">
-              <thead class="tableHead">
+              <thead className="tableHead">
                 <tr>
                   <th scope="col">Stock Ticker </th>
                   <th scope="col">Current Price </th>
