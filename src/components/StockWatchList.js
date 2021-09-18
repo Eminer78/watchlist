@@ -95,7 +95,7 @@ export default class App extends React.Component {
               <button className="btn btn-secondary">Launch Server</button>
             </form>
             <div className="row justify-content-center my-2 mx-2">
-              <div className="col-4 align-text-center">
+              <div className="col-6 align-text-center">
                 The Launch Server Button Is a temporary solution unti the server
                 side code is deployed outside CodeSandbox
               </div>
