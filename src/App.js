@@ -60,7 +60,7 @@ const App = () => (
           </div>
         </nav>
       </div>
-      <Route exact path="/" component={StockWatchList} />
+      <Route path="/" component={StockWatchList} />
       <Route path="/CreateWList" component={CreateWList} />
       <Route path="/ManageWatchLists" component={ManageWatchLists} />
     </Router>
