@@ -123,21 +123,21 @@ export default class App extends React.Component {
             </form>
           </div>
         </div>
-        <div className="row justify-content-center border border-light my-2 mx-2 customBorder">
-          <div className="stock-info">
+        <div className="row g-3 justify-content-center border border-light my-2 mx-2 customBorder">
+          <div className="col-md-auto">
             <div className="col-md-auto">
               <h2 className="row justify-content-center">Stock Information</h2>
             </div>
             <table className="table">
-              <thead className="tableHead">
+              <thead className="thead tableHead">
                 <tr>
-                  <th scope="col">Stock Ticker </th>
-                  <th scope="col">Current Price </th>
-                  <th scope="col">Open </th>
-                  <th scope="col">Prev. Close </th>
-                  <th scope="col">Change </th>
-                  <th scope="col">High </th>
-                  <th scope="col">Low </th>
+                  <th>Stock Ticker </th>
+                  <th>Current Price </th>
+                  <th>Open </th>
+                  <th>Prev. Close </th>
+                  <th>Change </th>
+                  <th>High </th>
+                  <th>Low </th>
                 </tr>
               </thead>
               <tbody>{this.renderStockPrices()}</tbody>
