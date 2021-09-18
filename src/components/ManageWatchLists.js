@@ -181,7 +181,7 @@ export default class ManageWatchLists extends React.Component {
     return (
       <div className="container">
         <h1 className="row justify-content-center py-4">WatchList Manager</h1>
-        <div className="border border-light my-2 py-4 px-4 customBorder">
+        <div className="border border-light my-2 py-4 px-2 customBorder">
           <h3 className="row justify-content-center">
             Display WatchList Information
           </h3>
@@ -242,9 +242,9 @@ export default class ManageWatchLists extends React.Component {
             <h3 className="row justify-content-center">
               Update Watchlist Information
             </h3>
-            <div className="row g-3 align-items-center py-2">
+            <div className="row g-3 align-items-center">
               <div className="col-3 customLabel">
-                <label className="form-label mx-2 .manageLabel">ID</label>
+                <label className="form-label .manageLabel">ID</label>
               </div>
               <div className="col-6">
                 <input
@@ -256,7 +256,7 @@ export default class ManageWatchLists extends React.Component {
                 />
               </div>
               <div className="col-3">
-                <div className="form-text mx-2">
+                <div className="form-text">
                   Enter the Id of the WatchList you would like to update
                 </div>
               </div>
