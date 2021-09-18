@@ -2,9 +2,9 @@ import React from "react";
 import CreateWList from "./components/CreateWList";
 import StockWatchList from "./components/StockWatchList";
 import ManageWatchLists from "./components/ManageWatchLists";
-import "./styles/styles.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
+import "./styles/styles.css";
+import { HashRouter as Router, Route, NavLink } from "react-router-dom";
 
 const App = () => (
   <>
