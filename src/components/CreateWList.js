@@ -7,17 +7,10 @@ export default class CreateWList extends Component {
     super(props);
 
     this.newListSubmit = this.newListSubmit.bind(this);
-    //this.handleReset = this.handleReset.bind(this);
+
     this.noSpaces = this.noSpaces.bind(this);
   }
-  /*
-  handleReset = () => {
-    document.querySelectorAll("input");
-    this.setState({
-      itemvalues: [{}],
-    });
-  };
-*/
+
   newListSubmit(event) {
     const API_URL = "https://yxn8t.sse.codesandbox.io/watchlists/new";
     event.preventDefault();
@@ -51,6 +44,11 @@ export default class CreateWList extends Component {
     })
       .then((x) => x.json())
       .then((x) => {
+        alert(
+          "WatchList " +
+            document.querySelector("[name=listname]").value +
+            " created"
+        );
         document.querySelector("[name=listname]").value = "";
         document.querySelector("[name=stk1]").value = "";
         document.querySelector("[name=stk2]").value = "";

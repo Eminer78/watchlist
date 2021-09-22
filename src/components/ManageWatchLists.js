@@ -94,6 +94,8 @@ export default class ManageWatchLists extends React.Component {
         document.querySelector("[name=nstk3]").value = "";
         document.querySelector("[name=nstk4]").value = "";
         document.querySelector("[name=nstk5]").value = "";
+        window.location.reload(false);
+        alert("Update Posted");
       });
   }
   // End of Function
