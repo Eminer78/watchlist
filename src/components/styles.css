@@ -4,15 +4,13 @@
 }
 
 .customNavBar {
-  background-color: teal !important;
+  background-color: teal;
 }
-.nav-item {
-  color: black !important;
-}
+
 html body {
   background-color: black;
   color: teal;
-  min-width: 760px !important;
+  min-width: 760px;
 }
 
 label {
@@ -24,17 +22,16 @@ label {
 }
 
 .customLabel {
-  text-align: right !important;
+  text-align: right;
 }
 .table {
   display: table;
-
   width: 100%;
   margin-top: 2%;
   margin-bottom: 2%;
   background-color: black;
   color: lightgray;
-  font-size: 2vw;
+  font-size: 0.75rem;
 }
 
 .mycustombtn {

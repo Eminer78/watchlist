@@ -1,6 +1,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../styles/styles.css";
+import "./styles.css";
 
 export default class App extends React.Component {
   constructor(props) {
@@ -8,6 +8,7 @@ export default class App extends React.Component {
     this.state = {
       stocks: {},
       wlists: {},
+      wListData: {},
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -32,6 +33,13 @@ export default class App extends React.Component {
       .then((x) => x.json())
       .then((stocks) => {
         this.setState({ stocks: stocks });
+      });
+
+    const API_URL2 = "https://yxn8t.sse.codesandbox.io/watchlists-id";
+    fetch(`${API_URL2}/${qwlistKey}`)
+      .then((x) => x.json())
+      .then((wListData) => {
+        this.setState({ wListData: wListData });
       });
   }
 
@@ -65,15 +73,24 @@ export default class App extends React.Component {
       );
     });
   }
+  renderwatchListData() {
+    return Object.entries(this.state.wListData).map((wLData) => {
+      return (
+        <h3 className="row justify-content-center" key={JSON.stringify(wLData)}>
+          Watchlist : {wLData[1].listname}
+        </h3>
+      );
+    });
+  }
 
   renderOptions() {
     if (!Array.isArray(this.state.wlists)) {
       return [];
     }
-
     return this.state.wlists.map((watchlist) => {
       const id = watchlist.id;
       const listname = watchlist.listname;
+
       return (
         <option key={id} value={id}>
           {listname}
@@ -81,6 +98,7 @@ export default class App extends React.Component {
       );
     });
   }
+
   render() {
     return (
       <div className="container">
@@ -126,6 +144,9 @@ export default class App extends React.Component {
         <div className="row g-3 justify-content-center border border-light my-2 mx-2 customBorder">
           <div className="col-md-auto">
             <div className="col-md-auto">
+              <h2 className="row justify-content-center">
+                {this.renderwatchListData()}
+              </h2>
               <h2 className="row justify-content-center">Stock Information</h2>
             </div>
             <table className="table">

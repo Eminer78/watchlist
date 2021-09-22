@@ -3,13 +3,13 @@ import CreateWList from "./components/CreateWList";
 import StockWatchList from "./components/StockWatchList";
 import ManageWatchLists from "./components/ManageWatchLists";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./styles/styles.css";
+import "./components/styles.css";
 import { HashRouter as Router, Route, NavLink } from "react-router-dom";
 
 const App = () => (
   <>
     <Router>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark customNavBar">
+      <nav className="navbar navbar-expand-lg navbar-dark customNavBar">
         <div className="container-fluid">
           <button
             className="navbar-toggler d-lg-none"

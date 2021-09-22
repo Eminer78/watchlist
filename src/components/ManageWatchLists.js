@@ -1,6 +1,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../styles/styles.css";
+import "./styles.css";
 
 export default class ManageWatchLists extends React.Component {
   constructor(props) {
@@ -94,7 +94,6 @@ export default class ManageWatchLists extends React.Component {
         document.querySelector("[name=nstk3]").value = "";
         document.querySelector("[name=nstk4]").value = "";
         document.querySelector("[name=nstk5]").value = "";
-        this.setState();
       });
   }
   // End of Function
@@ -128,7 +127,6 @@ export default class ManageWatchLists extends React.Component {
         .then((x) => x.json())
         .then((x) => {
           document.querySelector("[name=id-del]").value = "";
-          this.setState();
           window.location.reload(false);
         });
     } else {

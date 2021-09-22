@@ -1,23 +1,23 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../styles/styles.css";
+import "./styles.css";
 
 export default class CreateWList extends Component {
   constructor(props) {
     super(props);
 
     this.newListSubmit = this.newListSubmit.bind(this);
-    this.handleReset = this.handleReset.bind(this);
+    //this.handleReset = this.handleReset.bind(this);
     this.noSpaces = this.noSpaces.bind(this);
   }
-
+  /*
   handleReset = () => {
     document.querySelectorAll("input");
     this.setState({
       itemvalues: [{}],
     });
   };
-
+*/
   newListSubmit(event) {
     const API_URL = "https://yxn8t.sse.codesandbox.io/watchlists/new";
     event.preventDefault();
@@ -57,7 +57,6 @@ export default class CreateWList extends Component {
         document.querySelector("[name=stk3]").value = "";
         document.querySelector("[name=stk4]").value = "";
         document.querySelector("[name=stk5]").value = "";
-        this.setState();
       });
   }
 
