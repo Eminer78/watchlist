@@ -7,7 +7,6 @@ export default class CreateWList extends Component {
     super(props);
 
     this.newListSubmit = this.newListSubmit.bind(this);
-
     this.noSpaces = this.noSpaces.bind(this);
   }
 
@@ -68,11 +67,17 @@ export default class CreateWList extends Component {
   render() {
     return (
       <div className="container">
-        <h1 className="row justify-content-center py-4">
-          New WatchList Creation Form
-        </h1>
+        <div className="col-8 offset-2">
+          <div className="row justify-content-center border border-light my-4 mx-2 py-2 customBorder">
+            <div className="col-auto">
+              <h1 className="row justify-content-center py-2">
+                New WatchList Creation Form
+              </h1>
+            </div>
+          </div>
+        </div>
         <div className="border border-light my-4 py-2 customBorder">
-          <div className="my-4 px-4 pb-2">
+          <div className="col-8 offset-2">
             <form onSubmit={this.newListSubmit}>
               <label className="form-label py-2">
                 Stock Watch List Name (12 characters max length )

@@ -76,9 +76,9 @@ export default class App extends React.Component {
   renderwatchListData() {
     return Object.entries(this.state.wListData).map((wLData) => {
       return (
-        <h3 className="row justify-content-center" key={JSON.stringify(wLData)}>
-          Watchlist : {wLData[1].listname}
-        </h3>
+        <p className="row justify-content-center" key={JSON.stringify(wLData)}>
+          Watchlist Name: {wLData[1].listname}
+        </p>
       );
     });
   }
@@ -102,18 +102,20 @@ export default class App extends React.Component {
   render() {
     return (
       <div className="container">
-        <div className="row justify-content-center my-4 ">
-          <div className="col-auto">
-            <h1>Stock WatchList</h1>
-          </div>
-        </div>
-        <div className="mb-3">
-          <div className="row justify-content-center">
-            <form className="col-auto" onSubmit={this.launchServer}>
-              <button className="btn btn-secondary">Launch Server</button>
-            </form>
-            <div className="row justify-content-center my-2 mx-2">
-              <div className="row justify-content-center mt-4">
+        <div className="col-8 offset-2 ">
+          <div className="row justify-content-center border border-light my-2 mx-2 py-2 customBorder">
+            <div className="col-auto">
+              <h1 className="row justify-content-center py-2">
+                Stock WatchList
+              </h1>
+            </div>
+            <div className="row justify-content-center">
+              <form className="col-auto" onSubmit={this.launchServer}>
+                <button className="btn btn-secondary mt-2">
+                  Launch Server
+                </button>
+              </form>
+              <div className="row justify-content-center my-3 px-4">
                 The Launch Server Button is a temporary solution until the
                 server side code is deployed somewhere other than CodeSandbox
               </div>
@@ -121,7 +123,7 @@ export default class App extends React.Component {
           </div>
         </div>
         <div className="row justify-content-center border border-light my-4 mx-2 customBorder">
-          <div className="col-auto">
+          <div className="col-auto my-3">
             <form onSubmit={this.handleSubmit}>
               <div className="form-text">
                 Select the Watch List You Would Like to View
@@ -141,29 +143,39 @@ export default class App extends React.Component {
             </form>
           </div>
         </div>
-        <div className="row g-3 justify-content-center border border-light my-2 mx-2 customBorder">
-          <div className="col-md-auto">
-            <div className="col-md-auto">
-              <h2 className="row justify-content-center">
-                {this.renderwatchListData()}
-              </h2>
-              <h2 className="row justify-content-center">Stock Information</h2>
-            </div>
-            <table className="table">
-              <thead className="thead tableHead">
-                <tr>
-                  <th>Stock Ticker </th>
-                  <th>Current Price </th>
-                  <th>Open </th>
-                  <th>Prev. Close </th>
-                  <th>Change </th>
-                  <th>High </th>
-                  <th>Low </th>
-                </tr>
-              </thead>
-              <tbody>{this.renderStockPrices()}</tbody>
-            </table>
+        <div className="row justify-content-center border border-light my-2 mx-2 px-2 customBorder">
+          <h2 className="row justify-content-center mt-3">Stock Information</h2>
+          <div className="row justify-content-center customText">
+            {this.renderwatchListData()}
           </div>
+          <table className="table">
+            <thead className="thead tableHead">
+              <tr>
+                <th className="tableHead" scope="col">
+                  Stock Ticker
+                </th>
+                <th className="tableHead" scope="col">
+                  Current Price
+                </th>
+                <th className="tableHead" scope="col">
+                  Open
+                </th>
+                <th className="tableHead" scope="col">
+                  Prev. Close
+                </th>
+                <th className="tableHead" scope="col">
+                  Change
+                </th>
+                <th className="tableHead" scope="col">
+                  High
+                </th>
+                <th className="tableHead" scope="col">
+                  Low
+                </th>
+              </tr>
+            </thead>
+            <tbody>{this.renderStockPrices()}</tbody>
+          </table>
         </div>
       </div>
     );

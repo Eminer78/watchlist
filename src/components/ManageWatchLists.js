@@ -180,7 +180,15 @@ export default class ManageWatchLists extends React.Component {
   render() {
     return (
       <div className="container">
-        <h1 className="row justify-content-center py-4">WatchList Manager</h1>
+        <div className="col-8 offset-2 ">
+          <div className="row justify-content-center border border-light my-4 mx-2 py-2 customBorder">
+            <div className="col-auto">
+              <h1 className="row justify-content-center py-2">
+                WatchList Manager
+              </h1>
+            </div>
+          </div>
+        </div>
         <div className="border border-light my-2 py-4 px-2 customBorder">
           <h3 className="row justify-content-center">
             Display WatchList Information
@@ -206,34 +214,37 @@ export default class ManageWatchLists extends React.Component {
               </div>
             </div>
           </form>
-          <table className="table">
-            <tbody>
-              <tr>
-                <th className="tableHead" scope="col">
-                  ID
-                </th>
-                <th className="tableHead" scope="col">
-                  WatchList Name
-                </th>
-                <th className="tableHead" scope="col">
-                  Stock Ticker1
-                </th>
-                <th className="tableHead" scope="col">
-                  Stock Ticker2
-                </th>
-                <th className="tableHead" scope="col">
-                  Stock Ticker3
-                </th>
-                <th className="tableHead" scope="col">
-                  Stock Ticker4
-                </th>
-                <th className="tableHead" scope="col">
-                  Stock Ticker5
-                </th>
-              </tr>
-              {this.renderwatchListData()}
-            </tbody>
-          </table>
+
+          <div className="row justify-content-center">
+            <table className="table">
+              <tbody>
+                <tr>
+                  <th className="tableHead" scope="col">
+                    ID
+                  </th>
+                  <th className="tableHead" scope="col">
+                    WatchList Name
+                  </th>
+                  <th className="tableHead" scope="col">
+                    Stock Ticker1
+                  </th>
+                  <th className="tableHead" scope="col">
+                    Stock Ticker2
+                  </th>
+                  <th className="tableHead" scope="col">
+                    Stock Ticker3
+                  </th>
+                  <th className="tableHead" scope="col">
+                    Stock Ticker4
+                  </th>
+                  <th className="tableHead" scope="col">
+                    Stock Ticker5
+                  </th>
+                </tr>
+                {this.renderwatchListData()}
+              </tbody>
+            </table>
+          </div>
         </div>
 
         {/* This is the beginning of the form to update the watchlist information*/}

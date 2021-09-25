@@ -4,12 +4,13 @@ import StockWatchList from "./components/StockWatchList";
 import ManageWatchLists from "./components/ManageWatchLists";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./components/styles.css";
+
 import { HashRouter as Router, Route, NavLink } from "react-router-dom";
 
 const App = () => (
   <>
     <Router>
-      <nav className="navbar navbar-expand-lg navbar-dark customNavBar">
+      <nav className="navbar navbar-expand-lg navbar-light customNavBar">
         <div className="container-fluid">
           <button
             className="navbar-toggler d-lg-none"
@@ -23,8 +24,8 @@ const App = () => (
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="collapsibleNavId">
-            <ul className="navbar-nav">
-              <li className="nav-item">
+            <ul className="navbar-nav cust-nav">
+              <li className="nav-item ">
                 <NavLink
                   className="nav-link"
                   exact={true}
